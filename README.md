@@ -9,7 +9,9 @@ How to execute the program webcam_captur:
 
 ![alt text](https://github.com/sfabrego/webcam_capture/blob/master/Captura%20de%20pantalla%20de%202017-10-23%2019-15-35.png)
 
-3.-Then clone the repository to your local machine.
+3.-Then clone the repository to your local machine using the command:
+
+git clone https://github.com/my_github_name/webcam_capture.git
 
 ![alt text](https://github.com/sfabrego/webcam_capture/blob/master/Captura%20de%20pantalla%20de%202017-10-23%2019-54-00.png)
 

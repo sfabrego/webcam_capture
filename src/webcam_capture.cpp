@@ -1,6 +1,8 @@
 
 //opencv
 #include "opencv2/opencv.hpp"
+#include "cv.h"
+#include "highgui.h"
 
 //std
 #include <iostream>
@@ -49,9 +51,23 @@ int main(int argc, char *argv[])
             std::cout << "No frame" << std::endl;
             cv::waitKey();
         }
+	// change the 8 neigbors of the central pixel to the color yellow
 
+	
+	std::cout <<"the value of the central pixel is:" << (image.rows/2) << ":" << (image.cols/2) << std::endl;//show central pixel value
+	
+			
+	for(int x =319; x < 322; x++)
+		{
+		for(int y = 239; y < 241; y ++){
+			image.at<cv::Vec3b>(y,x)[0] = 0;  
+			image.at<cv::Vec3b>(y,x)[1] = 255;  
+			image.at<cv::Vec3b>(y,x)[2] = 255;}
+		}
+	std::cout <<"Color" <<image.at<cv::Vec3b>(240,320)[0] <<","<< image.at<cv::Vec3b>(240,320)[1]<<","<< image.at<cv::Vec3b>(240,320)[2]<< std::endl;
         //show image in a window
         cv::imshow("Output Window", image);
+	std::cout << "image size is: " << image.rows << "x" << image.cols << std::endl;
 
 		//Waits 30 millisecond to check if 'q' key has been pressed. If so, breaks the loop. Otherwise continues.
     	if( (unsigned char)(cv::waitKey(30) & 0xff) == 'q' ) break; 
